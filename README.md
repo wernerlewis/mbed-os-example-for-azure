@@ -23,10 +23,15 @@ Now the IoT Hub is ready for use in this example.
 To fetch the example,
 
 1. Fetch the project and its dependencies
+    * Mbed CLI 2
+    ```
+    mbed-tools import mbed-os-example-for-azure
+    ```
+    * Mbed CLI 1
     ```
     mbed import mbed-os-example-for-azure
     ```
-    Or if you fetched this example repository with `git clone`, run `mbed deploy` inside the cloned repository.
+    Or if you fetched this example repository with `git clone`, run `mbed-tools deploy` with Mbed CLI 2, or `mbed deploy` with Mbed CLI 1 inside the cloned repository.
 
     **Note**: Please _ignore_ warnings like `Could not access submodule ...` and `[mbed] WARNING: File "package.bld" in ...`. They are caused by different dependency control systems used by the Azure SDK and Mbed CLI.
 
@@ -46,7 +51,13 @@ To compile and run the example,
 
 1. Connect your development board to your PC with a USB cable.
 1. (If you want to use Ethernet) connect the board to an Ethernet cable of your network.
-1. Compile, flash and run the example
+1. Compile, flash and run the example:
+
+    With Mbed CLI 2
+    ```
+    mbed-tools compile <TARGET> -t <TOOLCHAIN> -f --sterm --baudrate 115200
+    ```
+    With Mbed CLI 1
     ```
     mbed compile -m <TARGET> -t <TOOLCHAIN> -f --sterm --baud 115200
     ```
