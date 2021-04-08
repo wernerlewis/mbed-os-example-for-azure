@@ -17,7 +17,9 @@ if("wifi_ism43362" IN_LIST MBED_TARGET_LABELS)
     add_subdirectory(drivers/COMPONENT_wifi_ism43362)
 endif()
 
-add_executable(${APP_TARGET})
+add_executable(${APP_TARGET}
+    main.cpp
+)
 
 mbed_configure_app_target(${APP_TARGET})
 
@@ -26,11 +28,6 @@ project(${APP_TARGET})
 target_include_directories(${APP_TARGET}
     PRIVATE
         .
-)
-
-target_sources(${APP_TARGET}
-    PRIVATE
-        main.cpp
 )
 
 if("wifi_ism43362" IN_LIST MBED_TARGET_LABELS)
